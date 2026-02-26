@@ -1,4 +1,4 @@
-# FlashFuseMoE
+# FlashFusedMoE
 
 Fused gate-to-output MoE layer with Expert Parallelism. Triton kernels, torch.compile support, overlapped communication.
 
