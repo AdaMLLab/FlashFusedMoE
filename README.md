@@ -99,4 +99,4 @@ torchrun --nproc_per_node=2 examples/full_integration.py --ep_size 2
 
 ## License
 
-MIT
+GPL-3.0
