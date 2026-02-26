@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flashfusemoe"
+version = "0.2.0"
+description = "Fused gate-to-output MoE layer with Expert Parallelism. Triton kernels, torch.compile support, overlapped communication."
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "torch>=2.4.0",
+    "triton>=3.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-xdist",
+]
+examples = [
+    "tiktoken",
+    "datasets",
+]
+bench = [
+    "flashinfer",
+    "tabulate",
+    "matplotlib",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
